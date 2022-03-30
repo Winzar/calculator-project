@@ -23,7 +23,7 @@ body {
   text-size-adjust: auto;
   font-size: 30px;
   color: white;
-  border-radius: 5%;
+  border-radius: 3%;
 }
 .calculator-buttons__large-button {
   grid-column: span 2;
