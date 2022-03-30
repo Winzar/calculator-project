@@ -1,0 +1,29 @@
+
+
+.calculator-display {
+    background-color: aqua;
+    //border: 22px;
+    height: 10vh;
+}
+
+
+
+.calculator-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 17vh 17vh 17vh 17vh 17vh;
+    //text-size-adjust: auto;
+
+    button{
+        background-color: orange;
+        text-size-adjust: auto;
+        font-size: 30px;
+        color: white;
+    }
+
+    &__large-button {
+        grid-column:span 2;
+        background-color: orange;
+    }
+
+}
