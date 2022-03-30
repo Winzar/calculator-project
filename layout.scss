@@ -12,6 +12,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 17vh 17vh 17vh 17vh 17vh;
+    grid-gap: 2px;
     //text-size-adjust: auto;
 
     button{
@@ -19,6 +20,7 @@
         text-size-adjust: auto;
         font-size: 30px;
         color: white;
+        border-radius: 5%;
     }
 
     &__large-button {

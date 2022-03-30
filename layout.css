@@ -7,12 +7,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 17vh 17vh 17vh 17vh 17vh;
+  grid-gap: 2px;
 }
 .calculator-buttons button {
   background-color: orange;
   text-size-adjust: auto;
   font-size: 30px;
   color: white;
+  border-radius: 5%;
 }
 .calculator-buttons__large-button {
   grid-column: span 2;
