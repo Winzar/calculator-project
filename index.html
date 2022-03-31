@@ -10,29 +10,33 @@
   <body>
     <div class="calculator">
       <div class="calculator-display">
-        <p id="input"></p>
+        <div class="output"></div>
+        <div class="previous-operand"></div>
+        <div class="current-operand"></div>
       </div>
 
       <div class="calculator-buttons">
-        <button>C</button>
-        <button>+/-</button>
-        <button>%</button>
-        <button>÷</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>X</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>-</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>+</button>
-        <button class="calculator-buttons__large-button">0</button>
-        <button>.</button>
-        <button>=</button>
+        <button calculator__clear>C</button>
+        <button calculator__negative>+/-</button>
+        <button calculator__percentage>%</button>
+        <button calculator__operation>÷</button>
+        <button calculator__number>7</button>
+        <button calculator__number>8</button>
+        <button calculator__number>9</button>
+        <button calculator__operation>X</button>
+        <button calculator__number>4</button>
+        <button calculator__number>5</button>
+        <button calculator__number>6</button>
+        <button calculator__operation>-</button>
+        <button calculator__number>1</button>
+        <button calculator__number>2</button>
+        <button calculator__number>3</button>
+        <button calculator__operation>+</button>
+        <button class="calculator-buttons__large-button" calculator__operation>
+          0
+        </button>
+        <button calculator__decimal>.</button>
+        <button calculator__equals>=</button>
       </div>
     </div>
   </body>
