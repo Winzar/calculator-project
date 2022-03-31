@@ -1,22 +1,21 @@
-.calculator-display {
-  background-color: aqua;
+.calculator__display {
+  background-color: cyan;
+  text-align: right;
   height: 10vh;
 }
-
-.calculator-buttons {
+.calculator__buttons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 17vh 17vh 17vh 17vh 17vh;
   grid-gap: 2px;
 }
-.calculator-buttons button {
+.calculator button {
   background-color: orange;
   text-size-adjust: auto;
   font-size: 30px;
   color: white;
   border-radius: 3%;
 }
-.calculator-buttons__large-button {
+.calculator__large-button {
   grid-column: span 2;
-  background-color: orange;
 }
