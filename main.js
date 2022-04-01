@@ -6,13 +6,15 @@
 // take string and convert to mathematical function
 // recognise when not to add an input e.g. mathematical function twice in a row/ not having a zero before the number
 // be able to do maths in the console log 
+// @ts-check
 
 const numberButtons = document.querySelectorAll('.calculator__number')
 const operationButtons = document.querySelectorAll('.calculator__operation')
 const clearButton = document.querySelector('.calculator__clear')
 const deleteButton = document.querySelector('.calculator__delete')
-// const previousOperand = document.querySelector('.previous-operand')
-// const currentOperand = document.querySelector('.current-operand')
+const decimalButton = document.querySelector('.calculator__decimal')
+const plusminusButton = document.querySelector('.calculator__plusminus')
+const percentButton = document.querySelector('.calculator__percent')
 const display = document.querySelector('.calculator__display')
 
 
@@ -20,8 +22,6 @@ var op = ""
 var firstValue= ""
 var secondValue= "" 
 var postOp = false 
-
-//display.innerHTML = "0"
 
 numberButtons.forEach(element => {
   element.addEventListener('click', () => {
@@ -36,8 +36,79 @@ numberButtons.forEach(element => {
   })
 });
 
+operationButtons.forEach(element => {
+  element.addEventListener('click', () => {
+    postOp= true
+    console.log(op)
+    if (element.innerHTML == "=" ){
+      operations()
+    } else if (element.innerHTML == "+/-") {
+
+    }
+    else {
+      op = element.innerHTML
+    }
+  })
+});
+
+function clear() {
+  op = ""
+  firstValue= ""
+  secondValue= "" 
+  postOp = false
+}
+
+decimalButton.addEventListener('click', ()=> {
+  if (postOp == false) {
+    firstValue+= decimalButton.innerHTML  
+    display.innerHTML = firstValue
+  } else  {
+    secondValue+= decimalButton.innerHTML
+    display.innerHTML = secondValue
+  }
+})
+
+percentButton.addEventListener('click', ()=> {
+  if (postOp == false) {
+    var firstValueDisplay =  firstValue + "%" 
+    display.innerHTML = firstValueDisplay
+    firstValue = (parseFloat(firstValue) * .01).toString()
+  } else  {
+    secondValue = secondValue + "%"
+    display.innerHTML = secondValue
+    secondValue = (parseFloat(secondValue) * .01).toString()
+  }
+})
+
+plusminusButton.addEventListener('click', ()=> {
+  if (postOp == false) {
+    var negative = firstValue.slice(0, 1)
+    if (negative == "-") {
+      firstValue = firstValue.slice(1)
+      display.innerHTML = firstValue
+    } else {
+      firstValue = "-" + firstValue 
+      display.innerHTML = firstValue
+    }
+    
+  } else  {
+    var negative = secondValue.slice(0, 1)
+    if (negative == "-") {
+      secondValue = secondValue.slice(1)
+      display.innerHTML = secondValue
+    } else {
+      secondValue = "-" + secondValue 
+      display.innerHTML = secondValue
+    }
+  }    
+})
+
+clearButton.addEventListener('click', () => {
+  display.innerHTML = "0"
+  clear()
+})
+
 function operations() {
-  console.log("Report: we're in operations")
   var result = 0
   var n1 = parseFloat(firstValue)
   console.log(n1)
@@ -47,60 +118,43 @@ function operations() {
   switch (op) {
     case "÷":
       result = n1 / n2
-      display.innerHTML = result.toString()
-      firstValue = result
       break
     case "+":
-      console.log("Report: we're in case +")
       result = n1 + n2
-      //display.innerHTML = result.toString()
-      display.innerHTML = result.toString()
-      firstValue = result
       break
     case "-":
       result = n1 - n2
-      display.innerHTML = result.toString()
-      firstValue = result
       break
     case "*":
       result = n1 * n2
-      display.innerHTML = result.toString()
-      firstValue = result
       break
-
     default:
-      display.innerHTML = "2"
-      console.log("Report: we're in default")
-
+      console.log("No case called")
   }
+  display.innerHTML = result.toString()
+  firstValue = result.toString();
+  secondValue = ""
+  result = 0;
+  op = ""
 }
 
 
-operationButtons.forEach(element => {
-  element.addEventListener('click', () => {
-    //firstValue+= element.innerHTML
-    postOp= true
-    // op = element.innerHTML
-    console.log(op)
-    if (element.innerHTML == "=" ){
-      operations()
-    }
-    else {
-      op = element.innerHTML
-    }
-  })
-});
 
 
-
+// function backspace() {
+//   if (postOp == false) {
+//     firstValue.slice(0, -1)
+//   } else {
+//     secondValue.slice(0, -1)
+//   }
+// }
 
 // clearButton.forEach(element => {
 //   element.addEventListener('click', () => {
-//     display = 0
-//     console.log(display)
+//     display.innerHTML = "0"
+//     clear()
 //   })
 // });
-
 
 // deleteButton.addEventListener('click', button => {
 //   calculator.delete()
@@ -117,7 +171,6 @@ operationButtons.forEach(element => {
 //     console.log(element)
 //   }
 // });
-
 
 
 
