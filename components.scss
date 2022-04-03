@@ -1,0 +1,50 @@
+.calculator {
+
+    &__buttons{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 17vh 17vh 17vh 17vh 17vh;
+        grid-gap: 2px;
+        //text-size-adjust: auto;
+        }
+    
+        button{
+            text-size-adjust: auto;
+            font-size: 30px;
+            //border-radius: 0%;
+            // for aesthetic reasons kept it to 0%
+        }
+    
+        &__number{
+            background-color: grey;
+            color: white;
+        }
+
+        &__decimal{
+            background-color: grey;
+            color: white;
+        }
+
+        &__operation{
+            background-color: orange;
+            color: white;
+        }
+
+        &__clear{
+            background-color: lightgray;
+            color: black;
+        }
+        &__plusminus{
+            background-color: lightgray;
+            color: black;
+        }
+        &__percent{
+            background-color: lightgray;
+            color: black;
+        }
+
+        &__large-button{
+            grid-column:span 2;
+        }
+    
+}

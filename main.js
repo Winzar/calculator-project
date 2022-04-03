@@ -1,11 +1,3 @@
-//1. identify button then take output from it, append number to internal calculation append number to display.
-//
-///
-///
-// take string and convert to actual number
-// take string and convert to mathematical function
-// recognise when not to add an input e.g. mathematical function twice in a row/ not having a zero before the number
-// be able to do maths in the console log 
 // @ts-check
 
 const numberButtons = document.querySelectorAll('.calculator__number')
@@ -38,21 +30,25 @@ numberButtons.forEach(element => {
   })
 });
 
+// adds an event listener for each operator, and changes the postOp to = true. When = is pressed, operations function is ran.
+// If it isn't =, it is logged on the display
 operationButtons.forEach(element => {
   element.addEventListener('click', () => {
     postOp= true
     console.log(op)
     if (element.innerHTML == "=" ){
       operations()
-    } else if (element.innerHTML == "+/-") {
-
-    }
+    } 
+    // else if (element.innerHTML == "+/-") {
+    // }
     else {
       op = element.innerHTML
     }
   })
 });
 
+
+// function that resets all the values
 function clear() {
   op = ""
   firstValue= ""
@@ -60,6 +56,8 @@ function clear() {
   postOp = false
 }
 
+
+// differentiates between first and second value to add a decimal 
 decimalButton.addEventListener('click', ()=> {
   if (postOp == false) {
     firstValue+= decimalButton.innerHTML  
@@ -70,6 +68,7 @@ decimalButton.addEventListener('click', ()=> {
   }
 })
 
+// multiplies by the percent value then converts it back to string
 percentButton.addEventListener('click', ()=> {
   if (postOp == false) {
     var firstValueDisplay =  firstValue + "%" 
@@ -82,6 +81,7 @@ percentButton.addEventListener('click', ()=> {
   }
 })
 
+// adds a minus symbol prior to the value and removes the symbol if tapped again
 plusminusButton.addEventListener('click', ()=> {
   if (postOp == false) {
     var negative = firstValue.slice(0, 1)
@@ -105,11 +105,13 @@ plusminusButton.addEventListener('click', ()=> {
   }    
 })
 
+//calls back the clear function
 clearButton.addEventListener('click', () => {
   display.innerHTML = ""
   clear()
 })
 
+// sets the result to 0 initially, converts the first and second values to a real number, then carries out op. Then converts back to string
 function operations() {
   var result = 0
   var n1 = parseFloat(firstValue)
@@ -140,9 +142,9 @@ function operations() {
   op = ""
 }
 
-// for equals if current value and previous value are filled, carry out action
 
-
+//-----------------------
+// Code for potential delete function
 // function backspace() {
 //   if (postOp == false) {
 //     firstValue.slice(0, -1)
@@ -150,13 +152,6 @@ function operations() {
 //     secondValue.slice(0, -1)
 //   }
 // }
-
-// clearButton.forEach(element => {
-//   element.addEventListener('click', () => {
-//     display.innerHTML = "0"
-//     clear()
-//   })
-// });
 
 // deleteButton.addEventListener('click', button => {
 //   calculator.delete()
@@ -167,12 +162,6 @@ function operations() {
 //   calculator.delete()
 //   calculator.updateDisplay()
 // })
-
-
-//   element.onclick = function() {
-//     console.log(element)
-//   }
-// });
 
 
 

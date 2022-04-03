@@ -1,0 +1,37 @@
+.calculator__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 17vh 17vh 17vh 17vh 17vh;
+  grid-gap: 2px;
+}
+.calculator button {
+  text-size-adjust: auto;
+  font-size: 30px;
+}
+.calculator__number {
+  background-color: grey;
+  color: white;
+}
+.calculator__decimal {
+  background-color: grey;
+  color: white;
+}
+.calculator__operation {
+  background-color: orange;
+  color: white;
+}
+.calculator__clear {
+  background-color: lightgray;
+  color: black;
+}
+.calculator__plusminus {
+  background-color: lightgray;
+  color: black;
+}
+.calculator__percent {
+  background-color: lightgray;
+  color: black;
+}
+.calculator__large-button {
+  grid-column: span 2;
+}
