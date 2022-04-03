@@ -17,10 +17,15 @@ var decimalButton = document.querySelector('.calculator__decimal');
 var plusminusButton = document.querySelector('.calculator__plusminus');
 var percentButton = document.querySelector('.calculator__percent');
 var display = document.querySelector('.calculator__display');
-var op = "";
-var firstValue = "";
-var secondValue = "";
-var postOp = false;
+var op = ""; // empty variable initially to take into op key inputs
+
+var firstValue = ""; // holder for n1 of the calculation
+
+var secondValue = ""; // holder for n2 of the calculation
+
+var postOp = false; // initial declaration that the operator hasn't been used, as an operator makes it go to n2
+//adds an event listener for each button, during the event listener it divides into n1 and n2, while also displaying on calculator
+
 numberButtons.forEach(function (element) {
   element.addEventListener('click', function () {
     if (postOp == false) {
@@ -28,7 +33,7 @@ numberButtons.forEach(function (element) {
       display.innerHTML = firstValue;
     } else {
       secondValue += element.innerHTML;
-      display.innerHTML = secondValue;
+      display.innerHTML = firstValue + op + secondValue;
     }
 
     console.log(display);
@@ -98,7 +103,7 @@ plusminusButton.addEventListener('click', function () {
   }
 });
 clearButton.addEventListener('click', function () {
-  display.innerHTML = "0";
+  display.innerHTML = "";
   clear();
 });
 
@@ -136,7 +141,8 @@ function operations() {
   secondValue = "";
   result = 0;
   op = "";
-} // function backspace() {
+} // for equals if current value and previous value are filled, carry out action
+// function backspace() {
 //   if (postOp == false) {
 //     firstValue.slice(0, -1)
 //   } else {
