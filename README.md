@@ -21,4 +21,4 @@ The calculator works on the basis of taking a current value and previous value. 
 
 ## A Quick Look
 
-![Alt text](<.\calculator-display.png "Calculator-Display">)
+![Alt text](https://github.com/Winzar/calculator-project/blob/main/calculator-display.png?raw=true>)
