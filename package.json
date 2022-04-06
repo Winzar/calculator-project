@@ -1,0 +1,23 @@
+{
+  "name": "calculator-project",
+  "version": "1.0.0",
+  "description": "The calculator carries out basic operations including:",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Winzar/calculator-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Winzar/calculator-project/issues"
+  },
+  "homepage": "https://github.com/Winzar/calculator-project#readme",
+  "devDependencies": {
+    "cypress": "^9.5.3"
+  }
+}
